@@ -1,0 +1,28 @@
+{
+    "id": "eurosat",
+    "modality": "RGB",
+    "format": "webdataset",
+    "compressed": false,
+    "path": "/mnt/nvme/webdatasets/wds_eurosat",
+    "image_key": "webp",
+    "target_key": "cls",
+    "metric": [
+        {
+            "_target_": "torchmetrics.classification.Accuracy",
+            "task": "multiclass",
+            "top_k": 1,
+            "num_classes": 10,
+            "average": "micro"
+        },
+        {
+            "_target_": "torchmetrics.classification.Accuracy",
+            "task": "multiclass",
+            "top_k": 1,
+            "num_classes": 10,
+            "average": "none"
+        }
+    ],
+    "loss": {
+        "_target_": "torch.nn.CrossEntropyLoss"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "id": "bigearthnet5_v2",
+    "modality": "S2_L2A",
+    "format": "webdataset",
+    "compressed": true,
+    "path": "/mnt/nvme/webdatasets/wds_bigearthnet5_v2",
+    "image_key": "s2_patch.pth",
+    "target_key": "labels_5.pth",
+    "metric": [
+        {
+            "_target_": "torchmetrics.classification.average_precision.AveragePrecision",
+            "task": "multilabel",
+            "num_labels": 5,
+            "average": "macro"
+        },
+        {
+            "_target_": "torchmetrics.classification.average_precision.AveragePrecision",
+            "task": "multilabel",
+            "num_labels": 5,
+            "average": "none"
+        }
+    ],
+    "loss": {
+        "_target_": "timm.loss.BinaryCrossEntropy",
+        "smoothing": 0.2
+    }
+}

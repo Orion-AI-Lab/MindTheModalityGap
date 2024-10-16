@@ -1,0 +1,33 @@
+{
+    "env": {
+        "log_dir": "/mnt/hdd/workspaces/clip-satellite/logs",
+        "log_file": "model.log",
+        "work_dir": "/mnt/hdd/workspaces/clip-satellite/outputs"
+    },
+    "torch": {
+        "seed": 42,
+        "num_workers": 4,
+        "device": "cuda:0",
+        "log_interval": 10,
+        "precision": "amp_bfloat16",
+        "torch_compile": true,
+        "grad_checkpointing": false
+    },
+    "model": {
+        "name": "ViT-B-32",
+        "pretrained": "openai",
+        "precision": "amp_bfloat16",
+        "device": "cuda:0"
+    },
+    "task": "patch",
+    "data": {
+        "task_dataset": "bigearthnet19",
+        "eval_dataset": [
+            "eurosat_ms",
+            "sen12ms",
+            "bigearthnet5",
+            "bigearthnet19",
+            "bigearthnet43"
+        ]
+    }
+}

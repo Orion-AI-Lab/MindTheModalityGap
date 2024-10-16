@@ -1,0 +1,29 @@
+{
+    "id": "align",
+    "num_epochs": 5,
+    "shuffle": false,
+    "eval_frequency": 1,
+    "train_batch_size": 256,
+    "test_batch_size": 256,
+    "val_batch_size": 256,
+    "teacher_model": {
+        "model_name": "ViT-B-32",
+        "pretrained": "openai"
+    },
+    "student_model": {
+        "model_name": "vit-s-16",
+        "pretrained": "",
+        "model_cfg": "conf/models/vit-s-16.json"
+    },
+    "optimizer": {
+        "_target_": "torch.optim.AdamW",
+        "lr": 1e-4,
+        "weight_decay": 0.01
+    },
+    "lr_scheduler": {
+        "_target_": "torch.optim.lr_scheduler.CosineAnnealingLR",
+        "base_lr": "${optimizer.lr}",
+        "warmup_length": 2000
+    }
+
+}

@@ -1,0 +1,28 @@
+{
+    "id": "eurosat_ms",
+    "modality": "S2_L1C",
+    "format": "webdataset",
+    "compressed": true,
+    "path": "/mnt/nvme/webdatasets/wds_eurosat_ms",
+    "image_key": "s2_patch.pth",
+    "target_key": ".cls",
+    "metric": [
+        {
+            "_target_": "torchmetrics.classification.Accuracy",
+            "task": "multiclass",
+            "top_k": 1,
+            "num_classes": 10,
+            "average": "micro"
+        },
+        {
+            "_target_": "torchmetrics.classification.Accuracy",
+            "task": "multiclass",
+            "top_k": 1,
+            "num_classes": 10,
+            "average": "none"
+        }
+    ],
+    "loss": {
+        "_target_": "torch.nn.CrossEntropyLoss"
+    }
+}

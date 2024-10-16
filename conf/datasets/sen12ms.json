@@ -1,0 +1,27 @@
+{
+    "id": "sen12ms",
+    "modality": "S2_L2A",
+    "format": "webdataset",
+    "compressed": true,
+    "path": "/mnt/nvme/webdatasets/wds_sen12ms",
+    "image_key": "s2_patch.pth",
+    "target_key": "labels_10.pth",
+    "metric": [
+        {
+            "_target_": "torchmetrics.classification.average_precision.AveragePrecision",
+            "task": "multilabel",
+            "num_labels": 9,
+            "average": "macro"
+        },
+        {
+            "_target_": "torchmetrics.classification.average_precision.AveragePrecision",
+            "task": "multilabel",
+            "num_labels": 9,
+            "average": "none"
+        }
+    ],
+    "loss": {
+        "_target_": "timm.loss.BinaryCrossEntropy",
+        "smoothing": 0.2
+    }
+}
