@@ -2,8 +2,8 @@
 
 ### Pretrained models
 The weights of both aligned and patched models can be accessed using the following links:
-  - (Patched)[https://mega.nz/folder/z2wwmLDS#d-ketrlbZFI9hqdjSW2AQA]
-  - (Aligned)[https://mega.nz/folder/erR0wZTQ#wQRpE8r8RRkNtK9BTlHYDA]
+  - [Patched](https://mega.nz/folder/z2wwmLDS#d-ketrlbZFI9hqdjSW2AQA)
+  - [Aligned](https://mega.nz/folder/erR0wZTQ#wQRpE8r8RRkNtK9BTlHYDA)
 
 ### Citation
 If you use this work please cite:
